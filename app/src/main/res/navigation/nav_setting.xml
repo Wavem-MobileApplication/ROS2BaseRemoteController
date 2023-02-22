@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_setting"
+    app:startDestination="@id/settingPageFragment">
+
+    <fragment
+        android:id="@+id/settingPageFragment"
+        android:name="com.example.baseremotecontroller.ui.fragment.setting.page.SettingPageFragment"
+        android:label="fragment_setting_page"
+        tools:layout="@layout/fragment_setting_page">
+        <action
+            android:id="@+id/action_settingPageFragment_to_settingMenuFragment"
+            app:destination="@id/settingMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingMenuFragment"
+        android:name="com.example.baseremotecontroller.ui.fragment.setting.menu.SettingMenuFragment"
+        android:label="fragment_setting_menu"
+        tools:layout="@layout/fragment_setting_menu" >
+        <action
+            android:id="@+id/action_settingMenuFragment_to_settingWidgetFragment"
+            app:destination="@id/settingWidgetFragment" />
+        <action
+            android:id="@+id/action_back_to_setting_page"
+            app:destination="@id/settingPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingWidgetFragment"
+        android:name="com.example.baseremotecontroller.ui.fragment.setting.widget.SettingWidgetFragment"
+        android:label="fragment_setting_widget"
+        tools:layout="@layout/fragment_setting_widget" >
+        <action
+            android:id="@+id/action_settingWidgetFragment_to_detailWidgetFragment"
+            app:destination="@id/detailWidgetFragment" />
+        <action
+            android:id="@+id/action_back_to_setting_menu"
+            app:destination="@id/settingMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailWidgetFragment"
+        android:name="com.example.baseremotecontroller.ui.fragment.setting.widget.DetailWidgetFragment"
+        android:label="fragment_detail_widget"
+        tools:layout="@layout/fragment_detail_widget" >
+        <action
+            android:id="@+id/action_back_to_setting_widget"
+            app:destination="@id/settingWidgetFragment" />
+    </fragment>
+</navigation>

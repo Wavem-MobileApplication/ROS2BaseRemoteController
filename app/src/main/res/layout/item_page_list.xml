@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_selected_page_item"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_page" />
+
+    <ImageButton
+        android:id="@+id/btn_drop_menu_item"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_selected_page_item"
+        app:layout_constraintStart_toEndOf="@+id/iv_selected_page_item"
+        app:layout_constraintTop_toTopOf="@+id/iv_selected_page_item"
+        app:srcCompat="@drawable/icon_arrow"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_page_name_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="페이지1"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_selected_page_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_drop_menu_item"
+        app:layout_constraintTop_toTopOf="@+id/iv_selected_page_item" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_menu_inner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_page_name_item"
+        app:layout_constraintStart_toStartOf="@+id/tv_page_name_item"
+        app:layout_constraintTop_toBottomOf="@+id/tv_page_name_item"
+        tools:listitem="@layout/item_menu_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
